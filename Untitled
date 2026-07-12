@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="description" content="MERRCY TRANSIT — Votre Partenaire Logistique de Confiance en Guinée. Transit, Logistique, Import-Export et Courtage en Assurance. Le Guichet Unique pour vos marchandises." />
+    <meta name="keywords" content="transit, logistique, Guinée, Conakry, import-export, assurance, courtage, MERRCY" />
+    <meta property="og:title" content="MERRCY TRANSIT — On bouge vos marchandises. On protège votre business." />
+    <meta property="og:description" content="Transit + Logistique + Assurance en Guinée. Un seul interlocuteur pour le transit, le transport et l'assurance de vos marchandises." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.merrcytransit.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>MERRCY TRANSIT — Transit · Logistique · Assurance | Guinée</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
