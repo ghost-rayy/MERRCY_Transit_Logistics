@@ -1,9 +1,10 @@
 import React from "react";
-import { Ship, Truck, ShieldCheck, PackageSearch, FileCheck, Globe2, Bike, Phone, MessageSquare } from "lucide-react";
+import { Ship, Truck, ShieldCheck, PackageSearch, FileCheck, Globe2, Phone, MessageSquare } from "lucide-react";
 import { EMS } from "./contactInfo";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const icons = [Ship, Truck, ShieldCheck, PackageSearch, FileCheck, Globe2];
+const emsImage = "/images/ems-speedster-rider.png";
 
 export default function Services() {
   const { t } = useLanguage();
@@ -70,15 +71,12 @@ export default function Services() {
       <div id="ems" className="container-tactical mt-16 md:mt-24">
         <div className="border border-border bg-card overflow-hidden">
           <div className="grid md:grid-cols-[auto_1fr] gap-0">
-            <div className="flex flex-col items-center justify-center gap-4 bg-safety-orange text-obsidian p-10 md:p-12 md:min-w-[220px]">
-              <div className="w-16 h-16 border-2 border-obsidian flex items-center justify-center font-heading font-700 text-3xl leading-none">
-                M
-              </div>
-              <Bike className="w-10 h-10" />
-              <div className="text-center">
-                <div className="font-heading font-700 text-xl tracking-wide">MERRCY EMS</div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] mt-1 opacity-80">Speedster</div>
-              </div>
+            <div className="relative md:min-w-[220px] md:max-w-[280px] min-h-[280px] md:min-h-full overflow-hidden bg-safety-orange">
+              <img
+                src={emsImage}
+                alt="MERRCY EMS Speedster courier on motorcycle in Conakry"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
 
             <div className="p-8 md:p-12 flex flex-col justify-center">

@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const aboutImage = "https://media.base44.com/images/public/6a515904ebc504448d8a93f4/b8429c049_generated_image.png";
 const portImage = "https://media.base44.com/images/public/6a515904ebc504448d8a93f4/6f904880b_generated_14ec078c.png";
+const emsFlyerImage = "/images/ems-flyer.png";
 
 export default function About() {
   const { t } = useLanguage();
@@ -115,16 +116,24 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-border mt-16">
-          <div className="relative h-64 md:h-96 overflow-hidden">
-            <img src={aboutImage} alt="MERRCY TRANSIT logistics coordinator in high-vis safety gear at industrial site" className="w-full h-full object-cover" />
+        <div className="grid md:grid-cols-3 gap-px bg-border mt-16">
+          <div className="relative min-h-64 overflow-hidden">
+            <img src={aboutImage} alt="MERRCY TRANSIT logistics coordinator in high-vis safety gear at industrial site" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 to-transparent"></div>
             <div className="absolute bottom-4 left-6 font-mono text-xs uppercase tracking-widest text-raw-steel">{a.fieldLabel}</div>
           </div>
-          <div className="relative h-64 md:h-96 overflow-hidden">
-            <img src={portImage} alt="MERRCY TRANSIT cargo operations at Conakry Port container terminal" className="w-full h-full object-cover" />
+          <div className="relative min-h-64 overflow-hidden">
+            <img src={portImage} alt="MERRCY TRANSIT cargo operations at Conakry Port container terminal" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 to-transparent"></div>
             <div className="absolute bottom-4 left-6 font-mono text-xs uppercase tracking-widest text-raw-steel">{a.portLabel}</div>
+          </div>
+          <div className="relative overflow-hidden bg-obsidian">
+            <img
+              src={emsFlyerImage}
+              alt="MERRCY EMS Speedster — livraison express en 2H à Conakry"
+              className="w-full h-auto block"
+            />
+            <div className="absolute bottom-4 left-6 font-mono text-xs uppercase tracking-widest text-raw-steel drop-shadow">{a.emsLabel}</div>
           </div>
         </div>
 
