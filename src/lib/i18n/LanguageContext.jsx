@@ -10,6 +10,7 @@ function getInitialLocale() {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (LOCALES.includes(saved)) return saved;
   const browser = (navigator.language || "").toLowerCase();
+  if (browser.startsWith("zh")) return "zh";
   if (browser.startsWith("en")) return "en";
   return "fr";
 }
@@ -27,7 +28,10 @@ export function LanguageProvider({ children }) {
   };
 
   const toggleLocale = () => {
-    setLocaleState((prev) => (prev === "fr" ? "en" : "fr"));
+    setLocaleState((prev) => {
+      const i = LOCALES.indexOf(prev);
+      return LOCALES[(i + 1) % LOCALES.length];
+    });
   };
 
   const t = translations[locale] || translations.fr;
