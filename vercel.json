@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/webmail",
+      "destination": "https://mail.merrcylogistique.com",
+      "permanent": false
+    }
+  ]
+}
