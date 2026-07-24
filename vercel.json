@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/webmail",
+      "destination": "https://gtxm1342.siteground.biz/webmail/mail/",
+      "permanent": false
+    }
+  ]
+}
