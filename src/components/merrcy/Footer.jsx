@@ -66,10 +66,10 @@ export default function Footer() {
                 WhatsApp
               </a>
               <a
-                href="http://www.merrcytransit.com"
+                href="https://www.merrcylogistique.com/"
                 className="font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-brand-gold transition-colors focus-visible-ring"
               >
-                www.merrcytransit.com
+                www.merrcylogistique.com
               </a>
             </div>
           </div>
