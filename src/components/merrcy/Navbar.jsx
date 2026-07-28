@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-safety-orange text-obsidian overflow-hidden whitespace-nowrap">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-brand-gold text-brand-navy overflow-hidden whitespace-nowrap">
         <div className="flex items-center animate-ticker py-1.5 text-xs font-mono font-semibold uppercase tracking-widest">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center shrink-0">
@@ -40,7 +40,7 @@ export default function Navbar() {
       <nav className={`fixed top-[30px] left-0 right-0 z-40 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"}`}>
         <div className="container-tactical flex items-center justify-between py-4">
           <a href="#hero" className="flex items-center gap-3 focus-visible-ring">
-            <div className="w-11 h-11 bg-safety-orange flex items-center justify-center font-heading font-700 text-obsidian text-xl leading-none">
+            <div className="w-11 h-11 bg-brand-gold flex items-center justify-center font-heading font-700 text-brand-navy text-xl leading-none">
               M
             </div>
             <div className="leading-none">
@@ -54,23 +54,23 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-safety-orange transition-colors duration-300 focus-visible-ring"
+                className="font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-brand-gold transition-colors duration-300 focus-visible-ring"
               >
                 {link.label}
               </a>
             ))}
             <a
               href={`tel:${TRANSIT.phoneTel}`}
-              className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-raw-steel hover:text-safety-orange transition-colors focus-visible-ring min-h-[48px]"
+              className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-raw-steel hover:text-brand-gold transition-colors focus-visible-ring min-h-[48px]"
             >
-              <Phone className="w-3.5 h-3.5 text-safety-orange shrink-0" />
+              <Phone className="w-3.5 h-3.5 text-brand-gold shrink-0" />
               <span className="hidden lg:inline">{t.nav.tel}</span> {TRANSIT.phoneDisplay}
             </a>
             <a
               href={TRANSIT.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-safety-orange transition-colors focus-visible-ring min-h-[48px]"
+              className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-brand-gold transition-colors focus-visible-ring min-h-[48px]"
               aria-label="WhatsApp"
             >
               <MessageSquare className="w-3.5 h-3.5 shrink-0" />
@@ -79,7 +79,7 @@ export default function Navbar() {
             <LanguageSwitcher />
             <a
               href="#contact"
-              className="bg-safety-orange text-obsidian font-heading font-600 uppercase text-sm tracking-wider px-6 py-3 hover:brightness-110 transition-all duration-300 focus-visible-ring min-h-[48px] flex items-center"
+              className="bg-brand-gold text-brand-navy font-heading font-600 uppercase text-sm tracking-wider px-6 py-3 hover:brightness-110 transition-all duration-300 focus-visible-ring min-h-[48px] flex items-center"
             >
               {t.nav.quote}
             </a>
@@ -105,7 +105,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="font-heading uppercase text-lg tracking-wide text-raw-steel hover:text-safety-orange transition-colors py-3 border-b border-border/50 focus-visible-ring"
+                  className="font-heading uppercase text-lg tracking-wide text-raw-steel hover:text-brand-gold transition-colors py-3 border-b border-border/50 focus-visible-ring"
                 >
                   {link.label}
                 </a>
@@ -113,9 +113,9 @@ export default function Navbar() {
               <a
                 href={`tel:${TRANSIT.phoneTel}`}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 font-heading uppercase text-lg tracking-wide text-raw-steel hover:text-safety-orange transition-colors py-3 border-b border-border/50 focus-visible-ring"
+                className="flex items-center gap-3 font-heading uppercase text-lg tracking-wide text-raw-steel hover:text-brand-gold transition-colors py-3 border-b border-border/50 focus-visible-ring"
               >
-                <Phone className="w-5 h-5 text-safety-orange" />
+                <Phone className="w-5 h-5 text-brand-gold" />
                 {TRANSIT.phoneDisplay}
               </a>
               <a
@@ -123,15 +123,15 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-3 font-heading uppercase text-lg tracking-wide text-raw-steel hover:text-safety-orange transition-colors py-3 border-b border-border/50 focus-visible-ring"
+                className="flex items-center gap-3 font-heading uppercase text-lg tracking-wide text-raw-steel hover:text-brand-gold transition-colors py-3 border-b border-border/50 focus-visible-ring"
               >
-                <MessageSquare className="w-5 h-5 text-safety-orange" />
+                <MessageSquare className="w-5 h-5 text-brand-gold" />
                 WhatsApp
               </a>
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className="bg-safety-orange text-obsidian font-heading font-600 uppercase text-sm tracking-wider px-6 py-3 mt-4 text-center min-h-[48px] flex items-center justify-center"
+                className="bg-brand-gold text-brand-navy font-heading font-600 uppercase text-sm tracking-wider px-6 py-3 mt-4 text-center min-h-[48px] flex items-center justify-center"
               >
                 {t.nav.quote}
               </a>

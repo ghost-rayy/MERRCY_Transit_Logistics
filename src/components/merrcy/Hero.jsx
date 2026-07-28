@@ -22,8 +22,8 @@ export default function Hero() {
           alt="MERRCY TRANSIT secure logistics hub at Conakry Port at golden hour"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/90 to-obsidian/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-brand-navy/40"></div>
       </div>
 
       <div className="absolute inset-0 z-10 grid-lines opacity-30"></div>
@@ -31,14 +31,14 @@ export default function Hero() {
       <div className="relative z-20 container-tactical w-full">
         <div className="max-w-4xl">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-12 h-0.5 bg-safety-orange"></div>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-safety-orange">
+            <div className="w-12 h-0.5 bg-brand-gold"></div>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-brand-gold">
               {h.tag}
             </span>
           </div>
 
           <h1 className="font-heading font-700 text-raw-steel text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-6">
-            {h.titleBefore} <span className="text-safety-orange text-glow">+</span> {h.titleAfter}
+            {h.titleBefore} <span className="text-brand-gold text-glow">+</span> {h.titleAfter}
           </h1>
           <p className="font-heading font-400 text-2xl md:text-3xl text-muted-foreground mb-8 max-w-2xl leading-snug">
             {h.slogan1}<br />
@@ -52,14 +52,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
-              className="bg-safety-orange text-obsidian font-heading font-600 uppercase text-base tracking-wider px-8 py-4 hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-3 min-h-[48px] focus-visible-ring group"
+              className="bg-brand-gold text-brand-navy font-heading font-600 uppercase text-base tracking-wider px-8 py-4 hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-3 min-h-[48px] focus-visible-ring group"
             >
               {h.ctaQuote}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#services"
-              className="border border-border text-raw-steel font-heading font-500 uppercase text-base tracking-wider px-8 py-4 hover:border-safety-orange hover:text-safety-orange transition-all duration-300 flex items-center justify-center min-h-[48px] focus-visible-ring"
+              className="border border-border text-raw-steel font-heading font-500 uppercase text-base tracking-wider px-8 py-4 hover:border-brand-gold hover:text-brand-gold transition-all duration-300 flex items-center justify-center min-h-[48px] focus-visible-ring"
             >
               {h.ctaServices}
             </a>
@@ -68,7 +68,7 @@ export default function Hero() {
           <div className="grid grid-cols-3 gap-4 md:gap-12 mt-16 pt-8 border-t border-border/50 max-w-2xl">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col gap-2">
-                <stat.icon className="w-6 h-6 text-safety-orange" />
+                <stat.icon className="w-6 h-6 text-brand-gold" />
                 <div className="font-heading font-600 text-raw-steel text-lg md:text-xl">{stat.value}</div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{stat.label}</div>
               </div>

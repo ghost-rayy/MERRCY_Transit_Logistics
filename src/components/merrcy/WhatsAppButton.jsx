@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MessageSquare, X, Bike, Truck } from "lucide-react";
-import { TRANSIT, EMS } from "./contactInfo";
+import { TRANSIT, SMS } from "./contactInfo";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function WhatsAppButton() {
@@ -15,24 +15,24 @@ export default function WhatsAppButton() {
             href={TRANSIT.whatsappPrefill}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-card border border-safety-orange text-raw-steel px-5 py-3 min-h-[48px] shadow-lg hover:bg-safety-orange hover:text-obsidian transition-all duration-300"
+            className="flex items-center gap-3 bg-card border border-brand-gold text-raw-steel px-5 py-3 min-h-[48px] shadow-lg hover:bg-brand-gold hover:text-brand-navy transition-all duration-300"
           >
-            <Truck className="w-5 h-5 text-safety-orange" />
+            <Truck className="w-5 h-5 text-brand-gold" />
             <div>
               <div className="font-heading font-600 text-sm uppercase tracking-wide">{t.whatsapp.transit}</div>
               <div className="font-mono text-[10px] uppercase tracking-widest opacity-70">{TRANSIT.phoneDisplay}</div>
             </div>
           </a>
           <a
-            href={EMS.whatsappPrefill}
+            href={SMS.whatsappPrefill}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-card border border-safety-orange text-raw-steel px-5 py-3 min-h-[48px] shadow-lg hover:bg-safety-orange hover:text-obsidian transition-all duration-300"
+            className="flex items-center gap-3 bg-card border border-brand-gold text-raw-steel px-5 py-3 min-h-[48px] shadow-lg hover:bg-brand-gold hover:text-brand-navy transition-all duration-300"
           >
-            <Bike className="w-5 h-5 text-safety-orange" />
+            <Bike className="w-5 h-5 text-brand-gold" />
             <div>
               <div className="font-heading font-600 text-sm uppercase tracking-wide">{t.whatsapp.ems}</div>
-              <div className="font-mono text-[10px] uppercase tracking-widest opacity-70">{EMS.phoneDisplay}</div>
+              <div className="font-mono text-[10px] uppercase tracking-widest opacity-70">{SMS.phoneDisplay}</div>
             </div>
           </a>
         </div>
@@ -40,7 +40,7 @@ export default function WhatsAppButton() {
 
       <button
         onClick={() => setOpen(!open)}
-        className="w-14 h-14 bg-safety-orange text-obsidian flex items-center justify-center pulse-ring hover:scale-105 transition-transform focus-visible-ring"
+        className="w-14 h-14 bg-brand-gold text-brand-navy flex items-center justify-center pulse-ring hover:scale-105 transition-transform focus-visible-ring"
         aria-label={t.whatsapp.aria}
       >
         {open ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}

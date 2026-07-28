@@ -23,8 +23,8 @@ export default function LanguageSwitcher({ className = "" }) {
           onClick={() => setLocale(code)}
           className={`px-2.5 py-1.5 min-h-[36px] transition-colors focus-visible-ring ${
             locale === code
-              ? "bg-safety-orange text-obsidian"
-              : "text-muted-foreground hover:text-safety-orange"
+              ? "bg-brand-gold text-brand-navy"
+              : "text-muted-foreground hover:text-brand-gold"
           }`}
           aria-pressed={locale === code}
         >

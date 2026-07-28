@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, MessageSquare } from "lucide-react";
-import { base44 } from "@/api/base44Client";
-import { TRANSIT, EMS, GHANA } from "./contactInfo";
+import { TRANSIT, SMS, GHANA } from "./contactInfo";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+
+const CONTACT_EMAIL = "contact@merrcytransit.com";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -32,15 +33,23 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitting(true);
     setError(null);
     try {
-      await base44.entities.ContactSubmission.create(formData);
+      const body = [
+        `Nom: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Téléphone: ${formData.phone}`,
+        `Sujet: ${formData.subject}`,
+        "",
+        formData.message,
+      ].join("\n");
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
       setSubmitted(true);
       setFormData({ name: "", email: "", phone: "", subject: defaultSubject, message: "" });
-    } catch (err) {
+    } catch {
       setError(c.error);
     } finally {
       setSubmitting(false);
@@ -56,8 +65,8 @@ export default function Contact() {
     {
       icon: Phone,
       label: c.phoneLabel,
-      lines: [TRANSIT.phoneDisplay, GHANA.phoneDisplay, `EMS: ${EMS.phoneDisplay}`],
-      links: [`tel:${TRANSIT.phoneTel}`, `tel:${GHANA.phoneTel}`, `tel:${EMS.phoneTel}`],
+      lines: [TRANSIT.phoneDisplay, GHANA.phoneDisplay, `SMS: ${SMS.phoneDisplay}`],
+      links: [`tel:${TRANSIT.phoneTel}`, `tel:${GHANA.phoneTel}`, `tel:${SMS.phoneTel}`],
     },
     {
       icon: Mail,
@@ -78,11 +87,11 @@ export default function Contact() {
 
       <div className="relative container-tactical">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-0.5 bg-safety-orange"></div>
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-safety-orange">{c.label}</span>
+          <div className="w-12 h-0.5 bg-brand-gold"></div>
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-brand-gold">{c.label}</span>
         </div>
         <h2 className="font-heading font-700 text-raw-steel text-4xl md:text-6xl leading-[0.95] mb-6 max-w-3xl">
-          {c.titleBefore} <span className="text-safety-orange">{c.titleHighlight}</span>
+          {c.titleBefore} <span className="text-brand-gold">{c.titleHighlight}</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mb-16 md:mb-24">
           {c.intro}
@@ -90,19 +99,19 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-px bg-border">
           <div className="bg-card p-8 md:p-12">
-            <div className="font-mono text-xs uppercase tracking-widest text-safety-orange mb-8">{c.coords}</div>
+            <div className="font-mono text-xs uppercase tracking-widest text-brand-gold mb-8">{c.coords}</div>
             <div className="space-y-8">
               {contactInfo.map((info, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-border">
-                    <info.icon className="w-5 h-5 text-safety-orange" />
+                    <info.icon className="w-5 h-5 text-brand-gold" />
                   </div>
                   <div className="flex-1">
                     <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">{info.label}</div>
                     <div className="space-y-1">
                       {info.lines.map((line, j) =>
                         info.links && info.links[j] ? (
-                          <a key={j} href={info.links[j]} className="block text-base text-raw-steel hover:text-safety-orange transition-colors focus-visible-ring">
+                          <a key={j} href={info.links[j]} className="block text-base text-raw-steel hover:text-brand-gold transition-colors focus-visible-ring">
                             {line}
                           </a>
                         ) : (
@@ -120,19 +129,19 @@ export default function Contact() {
                 href={TRANSIT.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full bg-card border border-safety-orange text-safety-orange font-heading font-600 uppercase text-sm tracking-wider px-6 py-4 hover:bg-safety-orange hover:text-obsidian transition-all duration-300 min-h-[48px] focus-visible-ring"
+                className="flex items-center justify-center gap-3 w-full bg-card border border-brand-gold text-brand-gold font-heading font-600 uppercase text-sm tracking-wider px-6 py-4 hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 min-h-[48px] focus-visible-ring"
               >
                 <MessageSquare className="w-5 h-5" />
                 Transit
               </a>
               <a
-                href={EMS.whatsappUrl}
+                href={SMS.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full bg-card border border-safety-orange text-safety-orange font-heading font-600 uppercase text-sm tracking-wider px-6 py-4 hover:bg-safety-orange hover:text-obsidian transition-all duration-300 min-h-[48px] focus-visible-ring"
+                className="flex items-center justify-center gap-3 w-full bg-card border border-brand-gold text-brand-gold font-heading font-600 uppercase text-sm tracking-wider px-6 py-4 hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 min-h-[48px] focus-visible-ring"
               >
                 <MessageSquare className="w-5 h-5" />
-                EMS
+                SMS
               </a>
             </div>
 
@@ -151,19 +160,19 @@ export default function Contact() {
           </div>
 
           <div className="bg-background p-8 md:p-12">
-            <div className="font-mono text-xs uppercase tracking-widest text-safety-orange mb-2">{c.formLabel}</div>
+            <div className="font-mono text-xs uppercase tracking-widest text-brand-gold mb-2">{c.formLabel}</div>
             <h3 className="font-heading font-600 text-2xl text-raw-steel mb-8">{c.formTitle}</h3>
 
             {submitted ? (
-              <div className="flex flex-col items-center justify-center text-center py-16 border border-safety-orange/30 bg-safety-orange/5">
-                <CheckCircle2 className="w-16 h-16 text-safety-orange mb-6" />
+              <div className="flex flex-col items-center justify-center text-center py-16 border border-brand-gold/30 bg-brand-gold/5">
+                <CheckCircle2 className="w-16 h-16 text-brand-gold mb-6" />
                 <h4 className="font-heading font-600 text-xl text-raw-steel mb-2">{c.successTitle}</h4>
                 <p className="text-muted-foreground max-w-sm">
                   {c.successMsg}
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 font-mono text-xs uppercase tracking-widest text-safety-orange hover:text-raw-steel transition-colors focus-visible-ring"
+                  className="mt-6 font-mono text-xs uppercase tracking-widest text-brand-gold hover:text-raw-steel transition-colors focus-visible-ring"
                 >
                   {c.newRequest}
                 </button>
@@ -181,7 +190,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-safety-orange transition-colors"
+                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-brand-gold transition-colors"
                     placeholder={c.namePlaceholder}
                   />
                 </div>
@@ -197,7 +206,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-safety-orange transition-colors"
+                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-brand-gold transition-colors"
                     placeholder="votre@email.com"
                   />
                 </div>
@@ -213,7 +222,7 @@ export default function Contact() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-safety-orange transition-colors"
+                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-brand-gold transition-colors"
                     placeholder="+224 ..."
                   />
                 </div>
@@ -228,7 +237,7 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-safety-orange transition-colors"
+                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-brand-gold transition-colors"
                   >
                     {subjects.map((s) => (
                       <option key={s} value={s} className="bg-card text-raw-steel">{s}</option>
@@ -247,7 +256,7 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-safety-orange transition-colors resize-y"
+                    className="w-full bg-card border border-border text-raw-steel px-4 py-3 min-h-[48px] focus:outline-none focus:border-brand-gold transition-colors resize-y"
                     placeholder={c.messagePlaceholder}
                   />
                 </div>
@@ -261,11 +270,11 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-safety-orange text-obsidian font-heading font-600 uppercase text-base tracking-wider px-8 py-4 hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-3 min-h-[48px] focus-visible-ring disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-brand-gold text-brand-navy font-heading font-600 uppercase text-base tracking-wider px-8 py-4 hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-3 min-h-[48px] focus-visible-ring disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {submitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-obsidian/30 border-t-obsidian rounded-full animate-spin"></div>
+                      <div className="w-5 h-5 border-2 border-brand-navy/30 border-t-brand-navy rounded-full animate-spin"></div>
                       {c.submitting}
                     </>
                   ) : (
