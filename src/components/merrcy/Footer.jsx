@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowUp, Bike, Phone } from "lucide-react";
-import { TRANSIT, SMS, GHANA } from "./contactInfo";
+import { TRANSIT, SMS, GHANA, GHANA2 } from "./contactInfo";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function Footer() {
@@ -94,12 +94,17 @@ export default function Footer() {
               <li>{f.address2}</li>
               <li>
                 <a href={`tel:${TRANSIT.phoneTel}`} className="hover:text-brand-gold transition-colors focus-visible-ring">
-                  {TRANSIT.phoneDisplay}
+                  {TRANSIT.phoneDisplay} - <span className=" text-sm">{f.contact1}</span>
                 </a>
               </li>
               <li>
                 <a href={`tel:${GHANA.phoneTel}`} className="hover:text-brand-gold transition-colors focus-visible-ring">
-                  {GHANA.phoneDisplay}
+                  {GHANA.phoneDisplay} - <span className=" text-sm">{f.contact2}</span>
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${GHANA2.phoneTel}`} className="hover:text-brand-gold transition-colors focus-visible-ring">
+                  {GHANA2.phoneDisplay} - <span className=" text-sm">{f.contact3}</span>
                 </a>
               </li>
               <li className="pt-2 border-t border-border/50">
