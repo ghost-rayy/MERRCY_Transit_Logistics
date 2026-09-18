@@ -94,12 +94,12 @@ export default function Footer() {
               <li>{f.address2}</li>
               <li>
                 <a href={`tel:${TRANSIT.phoneTel}`} className="hover:text-brand-gold transition-colors focus-visible-ring">
-                  {TRANSIT.phoneDisplay} - <span className=" text-sm">{f.contact}</span>
+                  {TRANSIT.phoneDisplay} - <span className=" text-sm">{f.contact0}</span>
                 </a>
               </li>
               <li>
                 <a href={`tel:${GHANA.phoneTel}`} className="hover:text-brand-gold transition-colors focus-visible-ring">
-                  {GHANA.phoneDisplay} - <span className=" text-sm">{f.contact}</span>
+                  {GHANA.phoneDisplay} - <span className=" text-sm">{f.contact0}</span>
                 </a>
               </li>
               <li>
