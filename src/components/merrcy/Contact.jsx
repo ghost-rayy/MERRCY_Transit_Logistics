@@ -71,8 +71,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email",
-      lines: ["contact@merrcytransit.com"],
-      links: ["mailto:contact@merrcytransit.com"],
+      lines: ["contact@merrcytransit.com", "contact@merrcytransit@gmail.com", "Merrcylogisticsandtransit@gmail.com"],
+      links: ["mailto:contact@merrcytransit.com", "mailto:contact@merrcytransit@gmail.com", "mailto:Merrcylogisticsandtransit@gmail.com"],
     },
     {
       icon: Clock,
