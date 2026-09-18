@@ -21,7 +21,17 @@ export const GHANA = {
   phoneDisplay: "+233 20 699 8018",
   phoneTel: "+233206998018",
 };
+
+//--------new contacts----------
+export const GHANA1 = {
+  phoneDisplay: "+224 62 462 3776",
+  phoneTel: "+224624623776",
+};
 export const GHANA2 = {
-  phoneDisplay: "+224 621691050 ",
+  phoneDisplay: "+224 62 578 7496 ",
+  phoneTel: "+224625787496",
+};
+export const GHANA3 = {
+  phoneDisplay: "+224 62 169 1050 ",
   phoneTel: "+224621691050",
 };
