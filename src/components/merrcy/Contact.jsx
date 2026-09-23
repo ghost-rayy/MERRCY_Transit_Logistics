@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, MessageSquare } from "l
 import { TRANSIT, SMS, GHANA } from "./contactInfo";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-const CONTACT_EMAIL = "contact@merrcytransit.com";
+const CONTACT_EMAIL = "contactmerrcytransit@gmail.com";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -71,8 +71,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email",
-      lines: ["contact@merrcytransit.com", "contact@merrcytransit@gmail.com", "Merrcylogisticsandtransit@gmail.com"],
-      links: ["mailto:contact@merrcytransit.com", "mailto:contact@merrcytransit@gmail.com", "mailto:Merrcylogisticsandtransit@gmail.com"],
+      lines: [ "contactmerrcytransit@gmail.com", "merrcylogisticsandtransit2026@gmail.com"],
+      links: ["mailto:contactmerrcytransit@gmail.com", "mailto:merrcylogisticsandtransit2026@gmail.com"],
     },
     {
       icon: Clock,
